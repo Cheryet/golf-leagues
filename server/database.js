@@ -7,12 +7,22 @@ const pool = new Pool({
   database: process.env.PGDATABASE || "golf_leagues",
 });
 
-// Gets all players
+// ~~ PLAYERS QUERIES ~~
 const getAllPlayers = () => {
   return pool
     .query(`SELECT * FROM players`)
     .then((result) => {
-      console.log(result.rows);
+      return result.rows;
+    })
+    .catch((error) => {
+      console.log(error.message);
+    });
+};
+
+const getPlayerById = (id) => {
+  return pool
+    .query(`SELECT * FROM players WHERE id = $1`, [id])
+    .then((result) => {
       return result.rows;
     })
     .catch((error) => {
@@ -22,4 +32,5 @@ const getAllPlayers = () => {
 
 module.exports = {
   getAllPlayers,
+  getPlayerById,
 };
