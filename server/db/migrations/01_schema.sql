@@ -7,8 +7,8 @@ CREATE TABLE players (
   last_name VARCHAR(255) NOT NULL,
   email VARCHAR(255) NOT NULL,
   handicap INTEGER DEFAULT 0,
-  created_at TIMESTAMP,
-  updated_at TIMESTAMP
+  created_at TIMESTAMP DEFAULT current_timestamp,
+  updated_at TIMESTAMP DEFAULT current_timestamp
 );
 
 CREATE TABLE teams (
@@ -16,8 +16,8 @@ CREATE TABLE teams (
   name VARCHAR(255) NOT NULL,
   captain_id INTEGER REFERENCES players(id),
   sponsor_id INTEGER REFERENCES players(id),
-  created_at TIMESTAMP,
-  updated_at TIMESTAMP
+  created_at TIMESTAMP DEFAULT current_timestamp,
+  updated_at TIMESTAMP DEFAULT current_timestamp
 );
 
 CREATE TABLE scores (
@@ -27,6 +27,6 @@ CREATE TABLE scores (
   week INTEGER NOT NULL,
   front_nine BOOLEAN NOT NULL DEFAULT False,
   back_nine BOOLEAN NOT NULL DEFAULT False,
-  created_at TIMESTAMP,
-  updated_at TIMESTAMP
+  created_at TIMESTAMP DEFAULT current_timestamp,
+  updated_at TIMESTAMP DEFAULT current_timestamp
 );
