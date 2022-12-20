@@ -31,6 +31,17 @@ const getPlayerById = (id) => {
     });
 };
 
+const addPlayer = (team_id, first_name, last_name, email, handicap) => {
+  return pool.query(
+    `INSERT INTO players (team_id, first_name, last_name, email, handicap) VALUES ($1, $2, $3, $4, $5)`,
+    [team_id, first_name, last_name, email, handicap]
+  );
+};
+
+const removePlayer = (player_id) => {
+  return pool.query(`DELETE FROM players WHERE id = $1`, [player_id]);
+};
+
 //  ~~ TEAMS QUERIES ~~
 
 const getAllTeams = () => {
@@ -59,6 +70,17 @@ const getTeamPlayers = (teamId) => {
     });
 };
 
+const addTeam = (name, captain_id, sponsor_id) => {
+  return pool.query(
+    `INSERT INTO teams (name, captain_id, sponsor_id) VALUES ($1, $2, $3)`,
+    [name, captain_id, sponsor_id]
+  );
+};
+
+const removeTeam = (team_id) => {
+  return pool.query(`DELETE FROM teams WHERE id = $1`, [team_id]);
+};
+
 //  ~~ SCORES QUERIES ~~
 
 const getAllScores = () => {
@@ -84,6 +106,17 @@ const getPlayerScores = (playerId) => {
     });
 };
 
+const addScore = (player_id, score, week, front_nine, back_nine) => {
+  return pool.query(
+    `INSERT INTO scores (player_id, score, week, front_nine, back_nine) VALUES ($1, $2, $3, $4, $5)`,
+    [player_id, score, week, front_nine, back_nine]
+  );
+};
+
+const removeScore = (score_id) => {
+  return pool.query(`DELETE FROM scores WHERE id = $1`, [score_id]);
+};
+
 module.exports = {
   getAllPlayers,
   getPlayerById,
@@ -91,4 +124,10 @@ module.exports = {
   getAllTeams,
   getPlayerScores,
   getAllScores,
+  addPlayer,
+  addTeam,
+  addScore,
+  removePlayer,
+  removeTeam,
+  removeScore,
 };
