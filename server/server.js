@@ -114,6 +114,7 @@ app.get("/api/scores/:player_id", (req, res) => {
   });
 });
 
+//Add score
 app.put("/api/scores", (req, res) => {
   db.addScore(
     req.body.player_id,
@@ -129,7 +130,7 @@ app.put("/api/scores", (req, res) => {
       console.log(error);
     });
 });
-
+//Delete score
 app.delete("/api/scores", (req, res) => {
   db.removeScore(req.body.score_id).then(() => {
     res.status(204).json();
