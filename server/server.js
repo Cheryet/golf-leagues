@@ -36,6 +36,39 @@ app.get("/api/players/:id", (req, res) => {
   });
 });
 
+// ~ TEAMS ROUTES ~
+
+app.get("/api/teams", (req, res) => {
+  db.getAllTeams().then((data) => {
+    const teams = data;
+    res.send(teams);
+  });
+});
+
+//Get players by team ID
+app.get("/api/teams/:team_id", (req, res) => {
+  db.getTeamPlayers(req.params.team_id).then((data) => {
+    const teamPlayers = data;
+    res.send(teamPlayers);
+  });
+});
+
+// ~ SCORES ROUTES ~
+
+app.get("/api/scores", (req, res) => {
+  db.getAllScores().then((data) => {
+    const scores = data;
+    res.send(scores);
+  });
+});
+
+app.get("/api/scores/:player_id", (req, res) => {
+  db.getTeamPlayers(req.params.team_id).then((data) => {
+    const playersScores = data;
+    res.send(playersScores);
+  });
+});
+
 app.listen(port, () => {
   console.log(`Server listening on port ${port} 😁`);
 });
