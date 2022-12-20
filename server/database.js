@@ -8,6 +8,7 @@ const pool = new Pool({
 });
 
 // ~~ PLAYERS QUERIES ~~
+
 const getAllPlayers = () => {
   return pool
     .query(`SELECT * FROM players`)
@@ -30,7 +31,64 @@ const getPlayerById = (id) => {
     });
 };
 
+//  ~~ TEAMS QUERIES ~~
+
+const getAllTeams = () => {
+  return pool
+    .query(`SELECT * FROM teams`)
+    .then((result) => {
+      return result.rows;
+    })
+    .catch((error) => {
+      console.log(error.message);
+    });
+};
+
+const getTeamPlayers = (teamId) => {
+  return pool
+    .query(
+      `SELECT * FROM players JOIN teams ON team_id = teams.id WHERE team_id = $1`,
+      [teamId]
+    )
+    .then((result) => {
+      console.log(result.rows);
+      return result.rows;
+    })
+    .catch((error) => {
+      console.log(error.message);
+    });
+};
+
+//  ~~ SCORES QUERIES ~~
+
+const getAllScores = () => {
+  return pool
+    .query(`SELECT * FROM scores`)
+    .then((result) => {
+      return result.rows;
+    })
+    .catch((error) => {
+      console.log(error.message);
+    });
+};
+
+const getPlayerScores = (playerId) => {
+  return pool
+    .query(`SELECT * FROM scores WHERE player_id = $1`, [playerId])
+    .then((result) => {
+      console.log(result.rows);
+      return result.rows;
+    })
+    .catch((error) => {
+      console.log(error.message);
+    });
+};
+
 module.exports = {
   getAllPlayers,
   getPlayerById,
+  getTeamPlayers,
+  getAllTeams,
+  getPlayerScores,
+  getAllScores,
 };
