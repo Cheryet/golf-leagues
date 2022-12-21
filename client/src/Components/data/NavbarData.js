@@ -20,7 +20,7 @@ export const NavbarData = [
   {
     title: "Teams",
     path: "/teams",
-    icon: <GrIcons.GrGroup />,
+    icon: <BsIcons.BsPeople />,
     cName: "nav-text",
   },
   {
@@ -32,7 +32,7 @@ export const NavbarData = [
   {
     title: "Scores",
     path: "/scores",
-    icon: <GrIcons.GrScorecard />,
+    icon: <BsIcons.BsFileBarGraph />,
     cName: "nav-text",
   },
 ];
