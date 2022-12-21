@@ -2,8 +2,10 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import * as FaIcons from "react-icons/fa";
-import * as GrIcons from "react-icons/gr";
+import * as AiIcons from "react-icons/ai";
 import { NavbarData } from "./data/NavbarData";
+import { IconContext } from "react-icons";
+import "./Navbar.scss";
 
 function Navbar() {
   //Side bar State
@@ -18,25 +20,38 @@ function Navbar() {
   const navItems = NavbarData.map((item, index) => {
     return (
       <li key={index} className={item.cName}>
-        {item.icon}
-        <span>{item.title}</span>
+        <Link to={item.path}>
+          {item.icon}
+          <span>{item.title}</span>
+        </Link>
       </li>
     );
   });
 
+  //TEST
+  const close = () => {
+    console.log("Closed");
+  };
+
   return (
     <>
-      <div className="navbar">
-        <FaIcons.FaBars />
-      </div>
-      <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
-        <ul className="nav-menu-items">
-          <li className="navbar-toggle">
-            <GrIcons.GrClose />
-          </li>
-          {navItems}
-        </ul>
-      </nav>
+      <IconContext.Provider value={{ color: "#fff" }}>
+        <div className="navbar">
+          <Link to="#" className="menu-bars">
+            <FaIcons.FaBars onClick={showSidebar} />
+          </Link>
+        </div>
+        <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
+          <ul className="nav-menu-items">
+            <li className="navbar-toggle">
+              <Link to="#" className="menu-bars">
+                <AiIcons.AiOutlineClose onClick={showSidebar} />
+              </Link>
+            </li>
+            {navItems}
+          </ul>
+        </nav>
+      </IconContext.Provider>
     </>
   );
 }
