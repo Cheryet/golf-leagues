@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
+import * as MdIcons from "react-icons/md";
 import { NavbarData } from "./data/NavbarData";
 import { IconContext } from "react-icons";
 import "./Navbar.scss";
@@ -28,11 +29,6 @@ function Navbar() {
     );
   });
 
-  //TEST
-  const close = () => {
-    console.log("Closed");
-  };
-
   return (
     <>
       <IconContext.Provider value={{ color: "#fff" }}>
@@ -40,6 +36,9 @@ function Navbar() {
           <Link to="#" className="menu-bars">
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
+          <h1 className={sidebar ? "nav-title active" : "nav-title"}>
+            Golf Leagues
+          </h1>
         </div>
         <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
           <ul className="nav-menu-items">
