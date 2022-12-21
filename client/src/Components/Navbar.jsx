@@ -7,6 +7,7 @@ import * as MdIcons from "react-icons/md";
 import { NavbarData } from "./data/NavbarData";
 import { IconContext } from "react-icons";
 import "./Navbar.scss";
+import Profile from "./Profile";
 
 function Navbar() {
   //Side bar State
@@ -46,6 +47,9 @@ function Navbar() {
               <Link to="#" className="menu-bars">
                 <AiIcons.AiOutlineClose onClick={showSidebar} />
               </Link>
+            </li>
+            <li>
+              <Profile />
             </li>
             {navItems}
           </ul>
