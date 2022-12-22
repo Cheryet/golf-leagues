@@ -21,7 +21,7 @@ const NavbarItem = (props) => {
           <li
             className={subnav ? props.className + " active" : props.className}
           >
-            <Link to={props.path} onClick={showSubnav}>
+            <Link onClick={showSubnav}>
               {props.icon}
               <span>{props.title}</span>
               <RiIcons.RiArrowDropDownLine className="subnav-arrow" />
