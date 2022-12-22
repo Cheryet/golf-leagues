@@ -16,23 +16,63 @@ export const NavbarData = [
     path: "/leagues",
     icon: <FaIcons.FaRegListAlt />,
     cName: "nav-text",
+    subnav: [
+      {
+        title: "My Leagues",
+        path: "/leagues",
+      },
+      {
+        title: "Create new League",
+        path: "/leagues/create",
+      },
+    ],
   },
   {
     title: "Teams",
     path: "/teams",
     icon: <BsIcons.BsPeople />,
     cName: "nav-text",
+    subnav: [
+      {
+        title: "My Teams",
+        path: "/teams",
+      },
+      {
+        title: "Create Team",
+        path: "/teams/create",
+      },
+    ],
   },
   {
     title: "Players",
     path: "/players",
     icon: <BsIcons.BsPersonBadge />,
     cName: "nav-text",
+    subnav: [
+      {
+        title: "My Players",
+        path: "/players",
+      },
+      {
+        title: "Add Player",
+        path: "/players/create",
+      },
+    ],
   },
   {
     title: "Scores",
     path: "/scores",
     icon: <BsIcons.BsFileBarGraph />,
     cName: "nav-text",
+    subnav: [
+      {
+        title: "History",
+        path: "/scores",
+      },
+      {
+        title: "Add Score",
+        path: "/scores/create",
+      },
+    ],
   },
 ];
