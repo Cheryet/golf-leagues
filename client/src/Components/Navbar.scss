@@ -66,12 +66,14 @@
 
 .nav-text {
   display: flex;
-  justify-self: start;
+  flex-direction: column;
+  justify-content: start;
   align-items: center;
   padding: 8px 0px 8px 16px;
   list-style: none;
   height: 60px;
 }
+
 
 .nav-text a {
   text-decoration: none;
@@ -87,12 +89,18 @@
 
 .nav-text a:hover{
   background-color: #206041a5 ;
+  
 
 }
 
 .nav-menu-items {
   width: 100%;
+}
 
+.subnav-arrow {
+  margin-left: 1rem;
+  font-size: 24px;
+  margin-left: auto;
 }
 
 .navbar-toggle {
@@ -111,4 +119,16 @@ span {
 
 .icon {
   color: white;
+}
+
+.subnav-list {
+  display: none;
+  height: 20px;
+  width: 100%
+}
+
+.subnav-list.active {
+  display: flex;
+  flex-direction: column;
+  height: 120px;
 }
