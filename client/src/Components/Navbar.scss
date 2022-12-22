@@ -123,12 +123,39 @@ span {
 
 .subnav-list {
   display: none;
-  height: 20px;
-  width: 100%
+  width: 100%;
+  padding-left: 3rem;
+  padding-right: 0.5rem;
+  padding-bottom: 0.5rem;
+
 }
 
 .subnav-list.active {
+  //border: 1px solid white;
   display: flex;
   flex-direction: column;
-  height: 120px;
+}
+
+.subnav-list a {
+  text-decoration: none;
+  color: whitesmoke;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+}
+.subnav-list span {
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 14px;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.subnav-list a:hover{
+  background-color: #206041a5 ;
+  
+
 }
