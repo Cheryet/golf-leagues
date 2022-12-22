@@ -8,12 +8,13 @@ import { NavbarData } from "./data/NavbarData";
 import { IconContext } from "react-icons";
 import "./Navbar.scss";
 import Profile from "./Profile";
+import NavbarItem from "./NavbarItem";
 
 function Navbar() {
   //Side bar State
   const [sidebar, setSidebar] = useState(false);
 
-  //Helper - Set Sidebar State
+  //Set Sidebar State
   const showSidebar = () => {
     setSidebar(!sidebar);
   };
@@ -21,12 +22,14 @@ function Navbar() {
   //Helper - Nav Items from array
   const navItems = NavbarData.map((item, index) => {
     return (
-      <li key={index} className={item.cName}>
-        <Link to={item.path}>
-          {item.icon}
-          <span>{item.title}</span>
-        </Link>
-      </li>
+      <NavbarItem
+        key={index}
+        className={item.cName}
+        path={item.path}
+        icon={item.icon}
+        title={item.title}
+        subnav={item.subnav ? item.subnav : null}
+      />
     );
   });
 
