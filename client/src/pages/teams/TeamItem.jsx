@@ -1,5 +1,6 @@
 import React from "react";
 import PlayerItem from "./PlayerItem";
+import * as AiIcons from "react-icons/ai";
 
 const TeamItem = (props) => {
   //
@@ -48,7 +49,7 @@ const TeamItem = (props) => {
   return (
     <>
       <div className="team-item">
-        <h2>{props.name}</h2>
+        <h2 className="team-title">{props.name}</h2>
         <div className="team-text">
           <p>
             Sponsor: {sponsor.first_name} {sponsor.last_name}
@@ -59,6 +60,9 @@ const TeamItem = (props) => {
           <div className="player-list-container">
             <ul className="player-list">{teamPlayers}</ul>
           </div>
+        </div>
+        <div className="print-icon">
+          <AiIcons.AiOutlinePrinter />
         </div>
       </div>
     </>
