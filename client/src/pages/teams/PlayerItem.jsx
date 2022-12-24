@@ -3,11 +3,12 @@ import React from "react";
 const PlayerItem = (props) => {
   return (
     <>
-      <li>
+      <li className="player-list">
         <div className="player-container">
           <p>
-            {props.lastname}, {props.firstname} | HDCP: {props.handicap}
+            {props.lastname}, {props.firstname}
           </p>
+          <p>HDCP: {props.handicap}</p>
         </div>
       </li>
     </>
