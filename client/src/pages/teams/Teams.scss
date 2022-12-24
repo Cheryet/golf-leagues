@@ -1,0 +1,57 @@
+$background: #00000052;
+$hover-color: #206041a5;
+
+.team-item {
+  //border: 1px solid white;
+  border-radius: 10px;
+  color: whitesmoke;
+  background-color: $background;
+  width: 60%;
+  display: flex;
+  padding: 2rem;
+  margin: 1rem auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.team-title {
+  font-size: 32px;
+  margin-bottom: 1rem;
+  padding: 0.5rem 4rem;
+  border-radius: 6px;
+  background-color: $hover-color;
+  box-shadow: 5px 5px 5px black;
+}
+
+.player-list-container{
+  margin: 1rem
+}
+.player-list {
+  list-style: none;
+}
+
+.player-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3rem;
+  margin-top: 0.5rem;
+
+  p {
+    text-align:left;
+  }
+  
+}
+
+.print-icon {
+  color: whitesmoke;
+  font-size: 24px;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+
+}
+
+.print-icon:hover {
+  background-color: $hover-color;
+}
