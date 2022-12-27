@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 
 const CreateTeam = () => {
   const [teamName, setTeamName] = useState("");
+  const [sponsorName, setSponsorName] = useState("");
+  const [captainName, setCaptainName] = useState("");
 
   //Set Page Title
   useEffect(() => {
@@ -34,7 +36,7 @@ const CreateTeam = () => {
               name="sponsor-name-input"
               type="text"
               placeholder="Enter Sponsors Name"
-              onChange={(e) => setTeamName(e.target.value)}
+              onChange={(e) => setSponsorName(e.target.value)}
             />
             <label>Captains Name: </label>
             <input
@@ -42,7 +44,7 @@ const CreateTeam = () => {
               name="captaian-name-input"
               type="text"
               placeholder="Enter Captains Name"
-              onChange={(e) => setTeamName(e.target.value)}
+              onChange={(e) => setCaptainName(e.target.value)}
             />
           </form>
         </div>
