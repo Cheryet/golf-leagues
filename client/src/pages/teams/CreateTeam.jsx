@@ -1,5 +1,6 @@
 import React from "react";
 import "./CreateTeam.scss";
+import * as BsIcon from "react-icons/bs";
 import { useState, useEffect } from "react";
 
 const CreateTeam = () => {
@@ -18,6 +19,7 @@ const CreateTeam = () => {
         <h1>Create Team</h1>
         <div className="new-team-container">
           <form
+            className="new-team-form"
             onSubmit={(e) => {
               e.preventDefault();
             }}
@@ -46,6 +48,10 @@ const CreateTeam = () => {
               placeholder="Enter Captains Name"
               onChange={(e) => setCaptainName(e.target.value)}
             />
+
+            <button className="save-btn">
+              <BsIcon.BsCheckLg className="save-icon" />
+            </button>
           </form>
         </div>
       </div>
