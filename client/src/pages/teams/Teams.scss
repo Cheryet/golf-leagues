@@ -5,7 +5,11 @@ $hover-color: #206041a5;
   //border: 1px solid white;
   border-radius: 10px;
   color: whitesmoke;
-  background-color: $background;
+  background: linear-gradient(
+    147deg,
+    rgba(18, 53, 36, 1) 15%,
+    rgba(6, 89, 26, 1) 100%
+  );
   width: 60%;
   display: flex;
   padding: 2rem;
@@ -24,8 +28,8 @@ $hover-color: #206041a5;
   box-shadow: 5px 5px 5px black;
 }
 
-.player-list-container{
-  margin: 1rem
+.player-list-container {
+  margin: 1rem;
 }
 .player-list {
   list-style: none;
@@ -38,9 +42,8 @@ $hover-color: #206041a5;
   margin-top: 0.5rem;
 
   p {
-    text-align:left;
+    text-align: left;
   }
-  
 }
 
 .print-icon {
@@ -49,9 +52,27 @@ $hover-color: #206041a5;
   padding: 0.5rem 1rem;
   margin-top: 1rem;
   border-radius: 5px;
-
 }
 
 .print-icon:hover {
   background-color: $hover-color;
+}
+
+.teams-menu {
+  width: 60%;
+  margin: 2rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.print-all-btn {
+  background-color: green;
+  color: whitesmoke;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.print-all-icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
 }
