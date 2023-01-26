@@ -1,6 +1,6 @@
 import "./App.scss";
 import Navbar from "./Navbar";
-import { BrowserRouter, Route, Router, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Dashboard from "../pages/Dashboard";
 import Home from "../pages/Home";
 import Notfound from "../pages/Notfound";
@@ -8,7 +8,6 @@ import Leagues from "../pages/leagues/Leagues";
 import CreateLeague from "../pages/leagues/CreateLeague";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { RiContactsBookUploadLine } from "react-icons/ri";
 import Teams from "../pages/teams/Teams";
 import CreateTeam from "../pages/teams/CreateTeam";
 
